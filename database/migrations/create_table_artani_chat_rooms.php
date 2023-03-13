@@ -22,7 +22,8 @@ class artaniChatMigration extends Tools {
         return $this->query("CREATE TABLE IF NOT EXISTS $nome_tabela (
           id INT NOT NULL AUTO_INCREMENT,
           user_id BIGINT(20) UNSIGNED NOT NULL,
-          host TINYINT(1) DEFAULT '0',
+          blocked TINYINT(1) DEFAULT '0',
+          status VARCHAR(50) NOT NULL DEFAULT 'not opened',
           PRIMARY KEY (id),
           created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
           FOREIGN KEY (user_id) REFERENCES {$this->db->prefix}users(ID)
@@ -36,8 +37,7 @@ class artaniChatMigration extends Tools {
               id INT NOT NULL AUTO_INCREMENT,
               user_id BIGINT(20) UNSIGNED NOT NULL,
               room_id INT NOT NULL,
-              message VARCHAR(250),
-              blocked TINYINT(1) DEFAULT '0',
+              message VARCHAR(250) NOT NULL,
               created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
               PRIMARY KEY (id),
               FOREIGN KEY (user_id) REFERENCES {$this->db->prefix}users(ID),
