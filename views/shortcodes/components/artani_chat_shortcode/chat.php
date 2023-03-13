@@ -5,7 +5,8 @@
     </h2>
 
     <p>
-        Caso não queira perder a sessão da conversa, se logue!
+        Caso não queira perder a sessão da conversa, se logue! <br>
+        Caso ache válido, entre também em contato no nosso Whatsapp: 2194982109
     </p>
  <!--   <div class="contact-artani-chat">
       <div class="pic rogers"></div>
@@ -120,8 +121,12 @@
         font-weight: 500;
         color: #242424;
         border: 2px solid #efefef;
+        transition: .3s;
     }
-    
+    .artani-chat-button-send:hover {
+        background-color: black;
+        color: white;
+    }
     </style>
     <button class="artani-chat-button-send"> ENVIAR </button><!--<i class="fas fa-microphone"></i>-->
     </div>
