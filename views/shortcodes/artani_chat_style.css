@@ -10,9 +10,10 @@ body, html {
 :root {
     --chat-width: 24rem;
     --chat-height: 29rem;
-    --chat-contacts-width: 22rem;
-    --chat-contacts-height: 27.5rem;
-    --chat-contacts-float: 70%;
+    --chat-contacts-width: 25rem;
+    --chat-contacts-height: 12.5rem;
+    --chat-contacts-float: 50%;
+    --chat-contacts-translate: -2rem;
 }
 .center {
     top: 50%;
@@ -75,7 +76,7 @@ body, html {
   position: absolute;
   top: var(--chat-contacts-float);
   left: 0;
-  transform: translate(-6rem, -50%);
+  transform: translate(var(--chat-contacts-translate), -50%);
   width: var(--chat-contacts-width);
   height: var(--chat-contacts-height);
   padding: 1rem 2rem 1rem 1rem;
@@ -242,7 +243,7 @@ body, html {
 .pic.user {
   margin-left: 8px;
   margin-top: 8px;
-  background-image: url("https://randomuser.me/api/portraits/men/78.jpg");
+  background-image: url("https://static.vecteezy.com/system/resources/previews/007/033/146/original/profile-icon-login-head-icon-vector.jpg");
 }
 
 .pic.banner {

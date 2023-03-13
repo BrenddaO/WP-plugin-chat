@@ -3,7 +3,6 @@
     .artani-chat-show-notLogged {
         display:flex;
         flex-direction: column;
-        background: white;
         display: flex;
     bottom: -9rem;
     position: absolute;
@@ -25,6 +24,7 @@
     width: var(--chat-contacts-width);
     padding: 1rem 2rem 1rem 1rem;
     box-shadow: 0 0 8rem 0 rgb(0 0 0 / 10%), 2rem 2rem 4rem -3rem rgb(0 0 0 / 50%);
+    transform: translateX(137px);
 }
 .artani-chat-notLogged .container{
     display: flex;
@@ -82,10 +82,14 @@
 .artani-chat-button:focus { outline:0; }
 
 </style>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
 
   <div class="artani-chat-notLogged">
     <div class="container">
     Gostaria de conversar conosco?
+    <input class="form-control mt-3" type="name" placeholder="Digite seu nome">
+    <input class="form-control my-3" type="name" placeholder="Qual o motivo">
     <button class="artani-chat-button">Entrar no Artani Chat</button>
     </div>
   </div>
@@ -96,5 +100,6 @@ const container = document.querySelector('.container')
 container.addEventListener('animationend', () => {
   container.classList.remove('active');
 });
+
 
   </script>

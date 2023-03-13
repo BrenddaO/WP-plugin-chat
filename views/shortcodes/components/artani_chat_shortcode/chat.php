@@ -1,9 +1,13 @@
 <div class="contacts-artani-chat">
-    <i class="fas fa-bars fa-2x"></i>
+   <!-- <i class="fas fa-bars fa-2x"></i>-->
     <h2>
-      Contacts
+      Informações Adicionais:
     </h2>
-    <div class="contact-artani-chat">
+
+    <p>
+        Caso não queira perder a sessão da conversa, se logue!
+    </p>
+ <!--   <div class="contact-artani-chat">
       <div class="pic rogers"></div>
       <div class="badge">
         14
@@ -59,14 +63,16 @@
       <div class="message">
         Hey Peter Parker, you got something for me?
       </div>
-    </div>
+    </div>-->
   </div>
+
+  
   <div class="chat">
 
     <div class="contact-artani-chat bar">
       <div class="pic user"></div>
       <div class="name">
-        Usuário logado
+        Usuário anonimo
       </div>
       <div class="seen">
         Today at 12:56
@@ -98,6 +104,25 @@
       </div>
     </div>
     <div class="input">
-      <i class="fas fa-camera"></i><i class="far fa-laugh-beam"></i><input placeholder="Type your message here!" type="text" /><i class="fas fa-microphone"></i>
+    <!--  <i class="fas fa-camera"></i><i class="far fa-laugh-beam"></i>-->
+    <input placeholder="Type your message here!" type="text" />
+    <style>
+    .artani-chat-button-send {
+        background-color: white;
+        padding: 0.5rem 1rem;
+        margin-right: 1rem;
+        border-radius: 8px;
+        flex-grow: 2;
+        box-shadow: 0 0 1rem rgb(0 0 0 / 10%), 0rem 1rem 1rem -1rem rgb(0 0 0 / 20%);
+        font-family: Red hat Display, sans-serif;
+        font-weight: 400;
+        letter-spacing: 0.025em;
+        font-weight: 500;
+        color: #242424;
+        border: 2px solid #efefef;
+    }
+    
+    </style>
+    <button class="artani-chat-button-send"> ENVIAR </button><!--<i class="fas fa-microphone"></i>-->
     </div>
   </div>
