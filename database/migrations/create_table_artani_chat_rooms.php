@@ -9,13 +9,14 @@ class artaniChatMigration extends Tools {
 
     function __construct() {
         parent::__construct();
-        $this->create_table_artani_chat_rooms();
-        $this->create_table_artani_chat_rooms_messages();
-        register_activation_hook( __FILE__, array($this, 'create_table_artani_chat_rooms'));
-        register_activation_hook( __FILE__, array($this, 'create_table_artani_chat_rooms_messages'));     
+        $this->boot();
+        register_activation_hook( __FILE__, array($this, 'boot'));    
     }
     
-    
+    function boot() {
+        $this->create_table_artani_chat_rooms();
+        $this->create_table_artani_chat_rooms_messages();
+    }
     
     function create_table_artani_chat_rooms() {
         $nome_tabela = $this->getNameTable('artani_chat_rooms');

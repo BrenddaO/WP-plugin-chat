@@ -18,9 +18,12 @@
  * @version     1.1
  */
 include 'tools.php';
+
 include 'admin/menu.php';
 include 'shortcodes/shortcodes.php';
 include 'database/migrations/Migration.php';
+include 'controllers/Controller.php';
 
 new \ArtaniChat\Admin\Menu;
 new \ArtaniChat\Database\Migrations\Migration;
+new \ArtaniChat\Controllers\Controller;

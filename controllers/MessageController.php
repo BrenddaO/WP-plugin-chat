@@ -1,8 +1,10 @@
 <?php
+require_once 'API/Message.php';
 namespace ArtaniChat\Controllers;
-require_once 'API/Chat.php';
-class ChatController extends \ArtaniChat\Controllers\API\Chat {
-    public function __construct() {
+
+class MessageController extends \ArtaniChat\Controllers\API\Message {
+    public function __construct()
+    {
         parent::__construct();
         $this->init();
     }
@@ -11,7 +13,7 @@ class ChatController extends \ArtaniChat\Controllers\API\Chat {
         $this->boot();
         add_action( 'rest_api_init', array($this, 'boot'));
     }
-    
+
     public function boot() {
         $this->callbacks();
         $this->endpoints();
