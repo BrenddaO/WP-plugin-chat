@@ -7,9 +7,6 @@
   <div style="opacity: 0" class="artani-chat-show-notLogged">
     <?php require_once 'components/artani_chat_shortcode/notLogged.php' ?>
   </div>
-<?php 
-echo rest_url('api/fodase');
-?>
 </div>
 <script>
   const chat = document.getElementById('chat');
@@ -25,7 +22,7 @@ echo rest_url('api/fodase');
     artaniShowChat.style.opacity = '1'
     artaniShowChat.style.transform = 'translateY(0)'
   }
-  fetch('<?php echo rest_url('') ?>').then((e) => {
+  fetch('<?php echo rest_url('artani-chat/get-rooms') ?>').then((e) => {
     console.log(e.json())
   })
   artaniChatButton.onclick = () => {

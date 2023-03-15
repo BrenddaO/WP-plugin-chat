@@ -1,23 +1,18 @@
 <?php
-require_once 'API/Message.php';
 namespace ArtaniChat\Controllers;
-
+require_once 'API/Message.php';
 class MessageController extends \ArtaniChat\Controllers\API\Message {
     public function __construct()
     {
         parent::__construct();
-        $this->init();
+        $this->boot();
     }
     
-    public function init() {
-        $this->boot();
-        add_action( 'rest_api_init', array($this, 'boot'));
-    }
-
     public function boot() {
         $this->callbacks();
         $this->endpoints();
     }
+    
 
     public function callbacks() {
         $this->getAll();

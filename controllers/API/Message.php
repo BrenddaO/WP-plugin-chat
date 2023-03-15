@@ -8,19 +8,21 @@ class Message {
     }
 
     public function endpoints() {
-        register_rest_route($this->prefix, '/create-message', array(
-            'methods' => 'POST',
-            'callback' => array( $this, 'create' ),
-        ));
-
-        register_rest_route($this->prefix, '/delete-message', array(
-            'methods' => 'POST',
-            'callback' => array( $this, 'delete' ),
-        ));
-
-        register_rest_route($this->prefix, '/get-messages', array(
-            'methods' => 'GET',
-            'callback' => array( $this, 'get' ),
-        ));
+        add_action('rest_api_init', function () {
+            register_rest_route($this->prefix, '/create-rooms', array(
+                'methods' => 'POST',
+                'callback' => array( $this, 'create' ),
+            ));
+    
+            register_rest_route($this->prefix, '/delete-rooms', array(
+                'methods' => 'POST',
+                'callback' => array( $this, 'delete' ),
+            ));
+    
+            register_rest_route($this->prefix, '/get-rooms', array(
+                'methods' => 'GET',
+                'callback' => array( $this, 'getAll' ),
+            ));
+        });
     }
 }
