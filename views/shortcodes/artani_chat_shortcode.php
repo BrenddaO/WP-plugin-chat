@@ -7,17 +7,27 @@
   <div style="opacity: 0" class="artani-chat-show-notLogged">
     <?php require_once 'components/artani_chat_shortcode/notLogged.php' ?>
   </div>
-
+<?php 
+echo rest_url('api/fodase');
+?>
 </div>
 <script>
   const chat = document.getElementById('chat');
-
+  //localStorage.removeItem("artaniChatSession")
   const artaniShowChat = document.querySelector('.artani-chat-show-chat');
   artaniShowChat.style.transform = 'translateY(-20rem)'
   const notLogged = document.querySelector('.artani-chat-show-notLogged');
-
+  notLogged.style.opacity = '1'
   const artaniChatButton = document.querySelector('.artani-chat-button')
-
+  if (localStorage.getItem("artaniChatSession") !== null) {
+      notLogged.style.opacity = '0'
+      artaniShowChat.style.transition = '1s'
+    artaniShowChat.style.opacity = '1'
+    artaniShowChat.style.transform = 'translateY(0)'
+  }
+  fetch('<?php echo rest_url('') ?>').then((e) => {
+    console.log(e.json())
+  })
   artaniChatButton.onclick = () => {
     artaniShowChat.style.transition = '1s'
     artaniShowChat.style.opacity = '1'
@@ -25,8 +35,19 @@
     notLogged.style.transition = '.5s'
     notLogged.style.opacity = '0'
     notLogged.style.transform = 'translateY(-20rem)'
+
+      // Verifica se existe um cache com a chave "batatonics"
+      if (localStorage.getItem("artaniChatSession") === null) {
+        // Se não existir, adiciona uma nova entrada no cache com a chave "batatonics"
+        console.log('não exist')
+        localStorage.setItem("artaniChatSession", "{status: 'active', user_id: '29', token: 'dsajoijoidsajidsa}");
+      } else {
+        // Se existir, recupera o valor associado à chave "batatonics"
+        const artaniChatSession = localStorage.getItem("artaniChatSession");
+        console.log(`Valor atual de batatonics: ${artaniChatSession}`);
+      }
+
   }
-  notLogged.style.opacity = '1'
 //artaniShowChat.style.display = 'flex'
   chat.scrollTop = chat.scrollHeight - chat.clientHeight;
 </script>
