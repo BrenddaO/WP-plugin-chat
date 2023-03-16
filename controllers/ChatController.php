@@ -22,11 +22,11 @@ class ChatController extends \ArtaniChat\Controllers\API\Chat {
     }
 
     public function create($request = null) {
-        error_log('create() foi chamado');
+        $body = json_decode($request->get_body(), true);
         $data = array(
-            'user_id' => 1,
-            'blocked' => 1,
-            'status' => 'ativo',
+            'user_id' => $body['user_id'],
+            'blocked' => $body['blocked'],
+            'status' => $body['status'],
             'created_at' => date('Y-m-d H:i:s')
         );
         //$format = array('%d', '%d', '%s', '%s');

@@ -33,7 +33,12 @@
   })
 
   fetch('<?php echo rest_url('artani-chat/create-room') ?>', {
-    method: 'POST'
+    method: 'POST',
+    body: JSON.stringify({
+    user_id: 1,
+    blocked: 1,
+    status: 'ativo',
+  }),
   }).then((e) => {
     console.log(e)
   })

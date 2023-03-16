@@ -19,4 +19,8 @@ abstract class Tools {
           return dbDelta($sql);
     }
 
+    function register($table) {
+        register_activation_hook( __FILE__, array($this, $table));  
+    }
+
 }
