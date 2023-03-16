@@ -10,23 +10,10 @@ class ChatController extends \ArtaniChat\Controllers\API\Chat {
         $this->db = $wpdb;
         $this->prefix = $wpdb->prefix; 
         $this->table =  $this->prefix . 'artani_chat_rooms';
-        //dd($this->table);
 
 
         parent::__construct();
-        $this->boot();
-    }
-    
-    public function boot() {
-        $this->callbacks();
         $this->endpoints();
-    }
-    
-
-    public function callbacks() {
-        $this->getAll();
-        $this->create();
-        $this->delete();
     }
 
     public function getAll($request = null) {
@@ -35,14 +22,15 @@ class ChatController extends \ArtaniChat\Controllers\API\Chat {
     }
 
     public function create($request = null) {
+        error_log('create() foi chamado');
         $data = array(
             'user_id' => 1,
             'blocked' => 1,
             'status' => 'ativo',
             'created_at' => date('Y-m-d H:i:s')
         );
-        $format = array('%d', '%d', '%s', '%s');
-        $results = $this->db->insert($this->table, $data, $format);
+        //$format = array('%d', '%d', '%s', '%s');
+        $results = $this->db->insert($this->table, $data);
         return $results;
     }
 
