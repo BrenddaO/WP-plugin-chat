@@ -22,8 +22,20 @@
     artaniShowChat.style.opacity = '1'
     artaniShowChat.style.transform = 'translateY(0)'
   }
+
+  fetch('<?php echo rest_url('artani-chat') ?>').then((e) => {
+    console.log(e.json())
+  })
+
+
   fetch('<?php echo rest_url('artani-chat/get-rooms') ?>').then((e) => {
     console.log(e.json())
+  })
+
+  fetch('<?php echo rest_url('artani-chat/create-room') ?>', {
+    method: 'POST'
+  }).then((e) => {
+    console.log(e)
   })
   artaniChatButton.onclick = () => {
     artaniShowChat.style.transition = '1s'

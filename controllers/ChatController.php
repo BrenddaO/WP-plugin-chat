@@ -9,7 +9,7 @@ class ChatController extends \ArtaniChat\Controllers\API\Chat {
         global $wpdb;
         $this->db = $wpdb;
         $this->prefix = $wpdb->prefix; 
-        $this->table =  $this->prefix . 'artani_chat_messages';
+        $this->table =  $this->prefix . 'artani_chat_rooms';
         //dd($this->table);
 
 
@@ -35,7 +35,15 @@ class ChatController extends \ArtaniChat\Controllers\API\Chat {
     }
 
     public function create($request = null) {
-
+        $data = array(
+            'user_id' => 1,
+            'blocked' => 1,
+            'status' => 'ativo',
+            'created_at' => date('Y-m-d H:i:s')
+        );
+        $format = array('%d', '%d', '%s', '%s');
+        $results = $this->db->insert($this->table, $data, $format);
+        return $results;
     }
 
     public function delete($request = null) {

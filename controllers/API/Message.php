@@ -4,7 +4,6 @@ class Message {
     protected $prefix;
     public function __construct() {
         $this->prefix = 'artani-chat';
-        $this->endpoints();
     }
 
     public function endpoints() {

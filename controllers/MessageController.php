@@ -25,7 +25,7 @@ class MessageController extends \ArtaniChat\Controllers\API\Message {
     }
 
     public function create($request = null) {
-
+        dd($request);
     }
 
     public function delete($request = null) {

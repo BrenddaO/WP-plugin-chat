@@ -9,12 +9,12 @@ class Chat {
     
     public function endpoints() {
         add_action('rest_api_init', function () {
-            register_rest_route($this->prefix, '/create-rooms', array(
+            register_rest_route($this->prefix, '/create-room', array(
                 'methods' => 'POST',
                 'callback' => array( $this, 'create' ),
             ));
     
-            register_rest_route($this->prefix, '/delete-rooms', array(
+            register_rest_route($this->prefix, '/delete-room', array(
                 'methods' => 'POST',
                 'callback' => array( $this, 'delete' ),
             ));
